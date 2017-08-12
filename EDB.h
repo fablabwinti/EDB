@@ -30,8 +30,8 @@ typedef byte* EDB_Rec;
 
 class EDB {
   public:
-    typedef void EDB_Write_Handler(unsigned long, const uint8_t);
-    typedef uint8_t EDB_Read_Handler(unsigned long);
+    typedef void EDB_Write_Handler(unsigned long, const uint8_t*, unsigned int);
+    typedef void EDB_Read_Handler(unsigned long, uint8_t*, unsigned int);
     EDB(EDB_Write_Handler *, EDB_Read_Handler *);
     EDB_Status create(unsigned long, unsigned long, unsigned int);
     EDB_Status open(unsigned long);

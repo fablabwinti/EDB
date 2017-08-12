@@ -14,15 +14,13 @@
 // low level byte write
 void EDB::edbWrite(unsigned long ee, const byte* p, unsigned int recsize)
 {
-  for (unsigned int i = 0; i < recsize; i++)
-    _write_byte(ee++, *p++);
+    _write_byte(ee, p, recsize);
 }
 
 // low level byte read
 void EDB::edbRead(unsigned long ee, byte* p, unsigned int recsize)
 {  
-  for (unsigned i = 0; i < recsize; i++)
-    *p++ = _read_byte(ee++);
+   _read_byte(ee, p, recsize);
 }
 
 // writes EDB_Header
